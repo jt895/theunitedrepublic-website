@@ -73,7 +73,7 @@ export const siteRoutes: SiteRoute[] = [
     path: "/growth-program/",
     title: "The Growth Program | The United Republic",
     description:
-      "The Growth Program finds the growth that's already in your business, sizes it in dollars, and gives you a plan you own. For Australian businesses ready for their next stage.",
+      "The Growth Program finds the growth that's already in your business, sizes its value to your business, and gives you a plan you own. For Australian businesses ready for their next stage.",
   },
   {
     page: "contact",

@@ -127,7 +127,7 @@
             "name": "James Trebilcock",
             "bioA": "Twenty-five years across strategy, communications, engagement, customer experience and operational leadership. For Toyota, Ford, Commonwealth Bank, Australia Post, DFAT Smartraveller, the Electoral Commission of South Australia and dozens of others. Campaigns that have reached millions of Australians.",
             "bioB": "The work has always been the same shape: find the real problem before anyone spends money on the wrong one. Understand what behaviours need to change. Build a strategy that connects insight, message and delivery, then make sure it survives contact with the real world.",
-            "bioC": "The questions that helped grow national businesses and campaigns that influenced millions of Australians are the same questions that need to be asked of any-sized business.  The scale changes. The quality of the thinking shouldn't.  ",
+            "bioC": "The questions that helped grow national businesses and campaigns that influenced millions of Australians are the same questions that need to be asked of any-sized business. The scale changes. The quality of the thinking shouldn't.",
             "bioD": ""
         },
         "tailoredTeam": {
@@ -189,7 +189,7 @@
         "hero": {
             "eyebrow": "The Growth Program",
             "title": "You're busy. You're spending. And you're still not sure it's working.",
-            "paraA": "Here's the good news: the growth you're looking for is already in your business. The Growth Program finds it, sizes its value in dollars, and gives you a plan you own.",
+            "paraA": "Here's the good news: the growth you're looking for is already in your business. The Growth Program finds it, sizes its value to your business, and gives you a plan you own.",
             "paraB": "Most businesses are one or two decisions away from better growth, and the answer probably isn't another marketing campaign. We test your assumptions against what the evidence actually says, then build the plan around the gaps and the opportunities.",
             "ctaPrimary": "Book your free 20 minute call",
             "ctaSecondary": "See the ways to work with us"
@@ -423,7 +423,7 @@
                                 "Logo and brand guidelines",
                                 "A website built in Framer: up to five pages, designed for you, properly animated, and yours to edit",
                                 "Website copy, with two rounds of changes",
-                                "Web domain, a branded email address  and Google Workspace",
+                                "Web domain, a branded email address and Google Workspace",
                                 "Google Business Profile",
                                 "Facebook, Instagram and LinkedIn set up properly",
                                 "Google Analytics and enquiry tracking",
@@ -736,7 +736,7 @@
                     "Creative and content review",
                     "Alignment across stakeholders and partners"
                 ],
-                "approach": "This is where the tailored team model comes to life: technology,  creative, media, content producers, delivery teams and anything else the strategy needs, selected for the job rather than because they are already on the books."
+                "approach": "This is where the tailored team model comes to life: technology, creative, media, content producers, delivery teams and anything else the strategy needs, selected for the job rather than because they are already on the books."
             },
             {
                 "num": "04",
@@ -822,7 +822,7 @@
             {
                 "id": "strategic-diagnostic",
                 "title": "Strategic Diagnostic",
-                "sub": "Define the objectives and understand the  real problems before you invest",
+                "sub": "Define the objectives and understand the real problems before you invest",
                 "duration": "2–4 weeks",
                 "body": "A focused diagnostic to understand the challenge, map the landscape, and define where strategic focus will have the greatest impact. Can be run as a facilitated workshop programme where the priority is aligning a team quickly, or as a research-led diagnostic where the priority is establishing the truth.",
                 "included": [
