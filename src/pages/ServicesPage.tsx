@@ -1,3 +1,4 @@
+import BookCallButton from "../components/BookCallButton";
 import HoloGlass from "../components/HoloGlass";
 import RelatedCaseStudies from "../components/RelatedCaseStudies";
 import { servicesContent } from "../data/content";
@@ -182,14 +183,7 @@ export default function ServicesPage({ onNavigate }: ServicesPageProps) {
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, lineHeight: 1.7, color: "rgba(245,243,238,0.45)", marginBottom: 36 }}>
             {servicesContent.cta.body}
           </p>
-          <button
-            onClick={() => goToContact(onNavigate, "services", "strategic-advisory-enquiry")}
-            style={{ background: "#2E9677", border: "none", cursor: "pointer", fontFamily: "'Inter', sans-serif", fontSize: 14, fontWeight: 500, color: "#fff", padding: "16px 32px", transition: "background 0.25s" }}
-            onMouseEnter={(e) => { e.currentTarget.style.background = "#268A67"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.background = "#2E9677"; }}
-          >
-            {servicesContent.cta.ctaLabel}
-          </button>
+          <BookCallButton label={servicesContent.cta.ctaLabel} onNavigate={onNavigate} sourcePage="services" formAnchor="strategic-advisory-enquiry" />
         </div>
       </section>
 

@@ -35,6 +35,11 @@
 
 html {
   scroll-behavior: smooth;
+  /* body { overflow-x: hidden } alone does not stop mobile browsers widening
+     the layout viewport when something overflows: the site rendered 456px
+     wide on a 390px phone, pushing the menu button off the right edge and
+     letting the page pan sideways. Clipping at the root closes that door. */
+  overflow-x: clip;
 }
 
 body {
@@ -143,37 +148,57 @@ body {
 }
 
 @media (max-width: 900px) {
-  /* Collapse multi-col grids on narrow viewports */
-  [style*="grid-template-columns: repeat(2"] {
+  /* Collapse multi-col grids on narrow viewports.
+     Each selector is listed twice: React's client render writes
+     "grid-template-columns: repeat(2" (with a space) but renderToString in
+     the prerender writes "grid-template-columns:repeat(2" (no space), and
+     hydration keeps the server string. The spaced-only selectors silently
+     missed every prerendered page, which is why the footer stayed three
+     columns wide on phones. */
+  [style*="grid-template-columns: repeat(2"],
+  [style*="grid-template-columns:repeat(2"],
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns:1fr 1fr"],
+  [style*="grid-template-columns: 1fr 1.5fr"],
+  [style*="grid-template-columns:1fr 1.5fr"],
+  [style*="grid-template-columns: 1fr 1.4fr"],
+  [style*="grid-template-columns:1fr 1.4fr"],
+  [style*="grid-template-columns: 1fr 1fr 1fr"],
+  [style*="grid-template-columns:1fr 1fr 1fr"],
+  [style*="grid-template-columns: repeat(3"],
+  [style*="grid-template-columns:repeat(3"] {
     grid-template-columns: 1fr !important;
   }
-  [style*="grid-template-columns: 1fr 1fr"] {
-    grid-template-columns: 1fr !important;
-  }
-  [style*="grid-template-columns: 1fr 1.5fr"] {
-    grid-template-columns: 1fr !important;
-  }
-  [style*="grid-template-columns: 1fr 1.4fr"] {
-    grid-template-columns: 1fr !important;
-  }
-  [style*="grid-template-columns: repeat(3"] {
-    grid-template-columns: 1fr !important;
-  }
-  [style*="grid-template-columns: repeat(4"] {
+  [style*="grid-template-columns: repeat(4"],
+  [style*="grid-template-columns:repeat(4"] {
     grid-template-columns: 1fr 1fr !important;
   }
-  [style*="grid-template-columns: 140px 1fr 1fr"] {
-    grid-template-columns: minmax(0, 1fr) !important;
-  }
-  [style*="grid-template-columns: 80px 1fr 1fr"] {
-    grid-template-columns: minmax(0, 1fr) !important;
-  }
-  [style*="grid-template-columns: 80px 200px 1fr"] {
+  [style*="grid-template-columns: 140px 1fr 1fr"],
+  [style*="grid-template-columns:140px 1fr 1fr"],
+  [style*="grid-template-columns: 80px 1fr 1fr"],
+  [style*="grid-template-columns:80px 1fr 1fr"],
+  [style*="grid-template-columns: 80px 200px 1fr"],
+  [style*="grid-template-columns:80px 200px 1fr"],
+  [style*="grid-template-columns: 220px 1fr"],
+  [style*="grid-template-columns:220px 1fr"] {
     grid-template-columns: minmax(0, 1fr) !important;
   }
 
   [style*="grid-template-columns"] > * {
     min-width: 0;
+  }
+
+  /* Long unbreakable strings (the email address in the footer) must wrap
+     rather than push the column, and the page, wider than the screen. */
+  footer a,
+  footer p {
+    overflow-wrap: anywhere;
+  }
+
+  /* Decorative hero rings sit behind the headline copy on phones and make
+     the paragraph hard to read. They are ornament; drop them below 900px. */
+  .hero-decor {
+    display: none !important;
   }
 }
 
@@ -198,7 +223,8 @@ body {
   }
 
   section [style*="grid-template-columns"] > *,
-  section [style*="display: flex"] > * {
+  section [style*="display: flex"] > *,
+  section [style*="display:flex"] > * {
     min-width: 0;
   }
 

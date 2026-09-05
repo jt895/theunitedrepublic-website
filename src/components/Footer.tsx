@@ -1,3 +1,4 @@
+import { trackContactClick } from "../lib/analytics";
 import LogoMark from "./LogoMark";
 import { footerContent, siteContent } from "../data/content";
 import { editableField } from "../data/editable";
@@ -59,13 +60,13 @@ export default function Footer({ current, onNavigate }: FooterProps) {
               {footerContent.contactHeading}
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-              <a href={`mailto:${siteContent.contact.email}`} style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: "rgba(245,243,238,0.55)", textDecoration: "none", transition: "color 0.2s" }}
+              <a href={`mailto:${siteContent.contact.email}`} onClick={() => trackContactClick("email", "footer")} style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: "rgba(245,243,238,0.55)", textDecoration: "none", transition: "color 0.2s" }}
                 onMouseEnter={(e) => { e.currentTarget.style.color = "#2E9677"; }}
                 onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(245,243,238,0.55)"; }}
               >
                 {siteContent.contact.email}
               </a>
-              <a href={siteContent.contact.phoneHref} style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: "rgba(245,243,238,0.55)", textDecoration: "none" }}>
+              <a href={siteContent.contact.phoneHref} onClick={() => trackContactClick("phone", "footer")} style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: "rgba(245,243,238,0.55)", textDecoration: "none" }}>
                 {siteContent.contact.phone}
               </a>
               <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, lineHeight: 1.6, color: "#939598", marginTop: 8 }}>

@@ -119,7 +119,7 @@ export default function ProductPage({ onNavigate, page, contentKey, product }: P
         <HoloGlass />
         {/* Anchored bottom right and bled off the section, so it never sits
             behind the centred hero copy. */}
-        <div style={{ position: "absolute", right: "-6%", bottom: "-34%", opacity: 0.13, pointerEvents: "none", zIndex: 0 }} className="hero-ring">
+        <div style={{ position: "absolute", right: "-6%", bottom: "-34%", opacity: 0.13, pointerEvents: "none", zIndex: 0 }} className="hero-decor hero-ring">
           <HeroMark variant="still" size={520} rings={TIER_RINGS[contentKey] ?? 6} weight={1.7} />
         </div>
         <div style={{ maxWidth: 720, margin: "0 auto", position: "relative", zIndex: 1 }}>

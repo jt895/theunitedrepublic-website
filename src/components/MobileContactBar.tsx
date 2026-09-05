@@ -1,3 +1,4 @@
+import { trackContactClick } from "../lib/analytics";
 import { siteContent } from "../data/content";
 
 function PhoneIcon() {
@@ -41,7 +42,7 @@ export default function MobileContactBar() {
       }}
     >
       <a
-        href={siteContent.contact.phoneHref}
+        href={siteContent.contact.phoneHref} onClick={() => trackContactClick("phone", "mobile-bar")}
         style={{
           flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
           padding: "16px 0", textDecoration: "none",
@@ -53,7 +54,7 @@ export default function MobileContactBar() {
       </a>
       <div style={{ width: 1, background: "rgba(255,255,255,0.08)" }} />
       <a
-        href={`mailto:${siteContent.contact.email}`}
+        href={`mailto:${siteContent.contact.email}`} onClick={() => trackContactClick("email", "mobile-bar")}
         style={{
           flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
           padding: "16px 0", textDecoration: "none",

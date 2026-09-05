@@ -1,3 +1,4 @@
+import BookCallButton from "../components/BookCallButton";
 import HoloGlass from "../components/HoloGlass";
 import RelatedCaseStudies from "../components/RelatedCaseStudies";
 import HeroMark from "../components/HeroMark";
@@ -21,6 +22,9 @@ export default function GrowthProgramPage({ onNavigate }: GrowthProgramPageProps
     trackCtaClick("viability-session");
     goToContact(onNavigate, "growth-program", "viability-session-enquiry");
   };
+  const scrollToViability = () => {
+    document.getElementById("viability-session")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
   const scrollToWaysToWork = () => {
     document.getElementById("ways-to-work")?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
@@ -32,7 +36,7 @@ export default function GrowthProgramPage({ onNavigate }: GrowthProgramPageProps
       <section {...editableField("growthProgram.hero")} style={{ padding: "100px 40px 64px", position: "relative", overflow: "hidden" }}>
         <HoloGlass />
         {/* V1 spinning rings - prominent, less subtle */}
-        <div style={{ position: "absolute", right: "-2%", top: "50%", transform: "translateY(-50%)", pointerEvents: "none", animation: "fade-in 2.4s ease 0.5s both", zIndex: 1 }}>
+        <div className="hero-decor" style={{ position: "absolute", right: "-2%", top: "50%", transform: "translateY(-50%)", pointerEvents: "none", animation: "fade-in 2.4s ease 0.5s both", zIndex: 1 }}>
           <HeroMark variant="expand" size={640} opacity={0.55} speed={1.1} weight={1.6} />
         </div>
 
@@ -51,14 +55,7 @@ export default function GrowthProgramPage({ onNavigate }: GrowthProgramPageProps
               {growthProgramContent.hero.paraB}
             </p>
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }} className="hero-cta">
-              <button
-                onClick={contact}
-                style={{ background: "#2E9677", border: "none", cursor: "pointer", fontFamily: "'Inter', sans-serif", fontSize: 14, fontWeight: 500, color: "#fff", padding: "16px 32px", transition: "background 0.25s" }}
-                onMouseEnter={(e) => { e.currentTarget.style.background = "#268A67"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.background = "#2E9677"; }}
-              >
-                {growthProgramContent.hero.ctaPrimary}
-              </button>
+              <BookCallButton label={growthProgramContent.hero.ctaPrimary} onNavigate={onNavigate} sourcePage="growth-program" formAnchor="growth-charter-enquiry" />
               <button
                 onClick={scrollToWaysToWork}
                 style={{ background: "none", border: "1px solid rgba(46,150,119,0.4)", cursor: "pointer", fontFamily: "'Inter', sans-serif", fontSize: 14, color: "#3AAC88", padding: "16px 32px", transition: "border-color 0.25s" }}
@@ -68,6 +65,35 @@ export default function GrowthProgramPage({ onNavigate }: GrowthProgramPageProps
                 {growthProgramContent.hero.ctaSecondary}
               </button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Is The Growth Program right for you. The best qualifying copy on the
+          page: it used to sit at the very bottom, under everything else. */}
+      <section {...editableField("growthProgram.fitCheck")} style={{ background: "#086F54", padding: "64px 40px" }}>
+        <div style={{ maxWidth: 1280, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "start" }}>
+          <div>
+            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, fontWeight: 500, letterSpacing: "0.2em", textTransform: "uppercase", color: "#8AD0BF", marginBottom: 20 }}>
+              {growthProgramContent.fitCheck.eyebrow}
+            </p>
+            <h2 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(28px, 3.5vw, 44px)", color: "#F5F3EE", fontWeight: 400, lineHeight: 1.2, marginBottom: 32 }}>
+              {growthProgramContent.fitCheck.title}
+            </h2>
+            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, lineHeight: 1.85, color: "rgba(245,243,238,0.6)", marginBottom: 32 }}>
+              {growthProgramContent.fitCheck.body}
+            </p>
+            <BookCallButton label={growthProgramContent.fitCheck.cta} onNavigate={onNavigate} sourcePage="growth-program" formAnchor="growth-charter-enquiry" variant="onGreen" />
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            {growthProgramContent.fitCheck.points.map((item, i) => (
+              <div key={i} style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
+                <div style={{ width: 18, height: 18, border: "1px solid rgba(138,208,191,0.5)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 2 }}>
+                  <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#8AD0BF" }} />
+                </div>
+                <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, lineHeight: 1.7, color: "rgba(245,243,238,0.65)", margin: 0 }}>{item}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -182,12 +208,23 @@ export default function GrowthProgramPage({ onNavigate }: GrowthProgramPageProps
             ))}
           </div>
 
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, lineHeight: 1.7, color: "rgba(245,243,238,0.4)", marginTop: 24 }}>
-            {growthProgramContent.waysToWork.note}{" "}
-            <a href="#viability-session" style={{ color: "#3AAC88", textDecoration: "none" }}>
-              {growthProgramContent.waysToWork.viabilityPointerLabel}
+          <div style={{ marginTop: 28, display: "flex", alignItems: "center", flexWrap: "wrap", gap: 24 }}>
+            <a
+              href="#viability-session"
+              onClick={(e) => { e.preventDefault(); scrollToViability(); }}
+              style={{ display: "inline-block", background: "#2E9677", fontFamily: "'Inter', sans-serif", fontSize: 14, fontWeight: 500, color: "#fff", padding: "16px 32px", textDecoration: "none", transition: "background 0.25s" }}
+              onMouseEnter={(e) => { e.currentTarget.style.background = "#268A67"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.background = "#2E9677"; }}
+            >
+              {growthProgramContent.waysToWork.viabilityCtaLabel}
             </a>
-          </p>
+            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, lineHeight: 1.7, color: "rgba(245,243,238,0.55)", margin: 0 }}>
+              {growthProgramContent.waysToWork.note}{" "}
+              <a href="#viability-session" onClick={(e) => { e.preventDefault(); scrollToViability(); }} style={{ color: "#3AAC88", textDecoration: "none" }}>
+                {growthProgramContent.waysToWork.viabilityPointerLabel}
+              </a>
+            </p>
+          </div>
 
           <div style={{ marginTop: 32, display: "flex", flexDirection: "column", gap: 24 }}>
             <div style={{ paddingTop: 32, borderTop: "1px solid rgba(255,255,255,0.08)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 20 }}>
@@ -207,6 +244,10 @@ export default function GrowthProgramPage({ onNavigate }: GrowthProgramPageProps
       </section>
 
       <style>{`
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item[open] .faq-marker { transform: rotate(45deg); }
+        .faq-marker { transition: transform 0.2s; display: inline-block; }
+
         @media (max-width: 640px) {
           .matrix-table { display: none !important; }
           .matrix-stack { display: flex !important; }
@@ -397,6 +438,32 @@ export default function GrowthProgramPage({ onNavigate }: GrowthProgramPageProps
       </section>
 
       {/* Related case studies */}
+      {/* FAQ: the questions a $6k to $15k decision raises, answered on the page
+          instead of in a "just checking" email that never gets sent. */}
+      <section {...editableField("growthProgram.faq")} style={{ padding: "64px 40px" }}>
+        <div style={{ maxWidth: 1280, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: 64, alignItems: "start" }}>
+          <div>
+            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, fontWeight: 500, letterSpacing: "0.2em", textTransform: "uppercase", color: "#3AAC88", marginBottom: 20 }}>
+              {growthProgramContent.faq.eyebrow}
+            </p>
+            <h2 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(28px, 3.5vw, 44px)", color: "#F5F3EE", fontWeight: 400, lineHeight: 1.2, margin: 0 }}>
+              {growthProgramContent.faq.title}
+            </h2>
+          </div>
+          <div>
+            {growthProgramContent.faq.items.map((item, i) => (
+              <details key={i} className="faq-item" style={{ borderTop: i === 0 ? "2px solid #2E9677" : "1px solid rgba(255,255,255,0.08)" }}>
+                <summary style={{ fontFamily: "'Instrument Serif', serif", fontSize: 22, color: "#F5F3EE", padding: "20px 0", cursor: "pointer", listStyle: "none", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16 }}>
+                  <span>{item.q}</span>
+                  <span aria-hidden="true" className="faq-marker" style={{ color: "#3AAC88", fontSize: 22, flexShrink: 0 }}>+</span>
+                </summary>
+                <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, lineHeight: 1.8, color: "rgba(245,243,238,0.65)", margin: "0 0 24px", maxWidth: 640 }}>{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <RelatedCaseStudies
         eyebrow="Related work"
         title="Businesses and organisations who've used it"
@@ -405,37 +472,6 @@ export default function GrowthProgramPage({ onNavigate }: GrowthProgramPageProps
         background="#1D191A"
       />
 
-      {/* Is The Growth Program right for you */}
-      <section {...editableField("growthProgram.fitCheck")} style={{ background: "#086F54", padding: "64px 40px" }}>
-        <div style={{ maxWidth: 1280, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "start" }}>
-          <div>
-            <h2 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(28px, 3.5vw, 44px)", color: "#F5F3EE", fontWeight: 400, lineHeight: 1.2, marginBottom: 32 }}>
-              {growthProgramContent.fitCheck.title}
-            </h2>
-            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, lineHeight: 1.85, color: "rgba(245,243,238,0.6)", marginBottom: 32 }}>
-              {growthProgramContent.fitCheck.body}
-            </p>
-            <button
-              onClick={contact}
-              style={{ background: "#2E9677", border: "none", cursor: "pointer", fontFamily: "'Inter', sans-serif", fontSize: 14, fontWeight: 500, color: "#fff", padding: "16px 32px", transition: "background 0.25s" }}
-              onMouseEnter={(e) => { e.currentTarget.style.background = "#268A67"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.background = "#2E9677"; }}
-            >
-              {growthProgramContent.fitCheck.cta}
-            </button>
-          </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-            {growthProgramContent.fitCheck.points.map((item, i) => (
-              <div key={i} style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
-                <div style={{ width: 18, height: 18, border: "1px solid rgba(138,208,191,0.5)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 2 }}>
-                  <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#8AD0BF" }} />
-                </div>
-                <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, lineHeight: 1.7, color: "rgba(245,243,238,0.65)", margin: 0 }}>{item}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

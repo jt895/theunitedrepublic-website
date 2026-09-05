@@ -8,12 +8,16 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
+    <!-- Fonts come from Google via the CSS @import; warming both hosts early
+         shaves the round trips off the first paint of Instrument Serif. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <meta name="theme-color" content="#231F20" />
     <meta name="description" content="Independent strategic advisory and practical growth support for established Australian businesses and complex organisations." />
     <meta property="og:title" content="The United Republic | Strategy and Business Growth" />
     <meta property="og:description" content="Independent strategic advisory and practical growth support for established Australian businesses and complex organisations." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://thegrowthcharter.netlify.app/" />
+    <meta property="og:url" content="https://theunitedrepublic.com.au/" />
     <meta property="og:site_name" content="The United Republic" />
     <!--
       Default share image. prerender.mjs and routes.ts (updateDocumentMetadata)
@@ -23,20 +27,20 @@
       overrides go in the same public/og/ folder, referenced via each route's
       `image` field in src/routes.ts).
     -->
-    <meta property="og:image" content="https://thegrowthcharter.netlify.app/og/default.png" />
+    <meta property="og:image" content="https://theunitedrepublic.com.au/og/default.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="The United Republic" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://thegrowthcharter.netlify.app/og/default.png" />
-    <link rel="canonical" href="https://thegrowthcharter.netlify.app/" />
+    <meta name="twitter:image" content="https://theunitedrepublic.com.au/og/default.png" />
+    <link rel="canonical" href="https://theunitedrepublic.com.au/" />
     <title><!-- figma:title --></title>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         "name": "The United Republic",
-        "url": "https://thegrowthcharter.netlify.app/",
+        "url": "https://theunitedrepublic.com.au/",
         "email": "jt@theunitedrepublic.com.au",
         "telephone": "+61407744388",
         "address": {

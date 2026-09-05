@@ -1,7 +1,7 @@
+import BookCallButton from "../components/BookCallButton";
 import { homeContent } from "../data/content";
 import { editableField } from "../data/editable";
-import { goToContact } from "../lib/contactNav";
-import type { Page } from "../routes";
+import { pathForPage, type Page } from "../routes";
 import HoloGlass from "../components/HoloGlass";
 import HeroMark from "../components/HeroMark";
 
@@ -61,10 +61,6 @@ const clientLogoImages: { src: string; alt: string; hoverSrc?: string; hoverScal
 
 export default function HomePage({ onNavigate }: HomePageProps) {
   const nav = (page: Page) => { onNavigate(page); window.scrollTo({ top: 0 }); };
-  const scrollToPaths = () => {
-    document.getElementById("two-paths")?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
   const r3 = useReveal(), r4 = useReveal(), r5 = useReveal(), r6 = useReveal();
 
   return (
@@ -79,7 +75,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             via HeroMark; this used to be a hand-coded copy with its own
             radii, the split mirrored, and no transform origin on the outer ring,
             which made it swing off-centre as it rotated. */}
-        <div style={{ position: "absolute", right: "6%", top: "50%", transform: "translateY(-50%)", opacity: 0.18, pointerEvents: "none", zIndex: 1 }} className="hero-ring">
+        <div style={{ position: "absolute", right: "6%", top: "50%", transform: "translateY(-50%)", opacity: 0.18, pointerEvents: "none", zIndex: 1 }} className="hero-ring hero-decor">
           <HeroMark variant="rotate" size={520} />
         </div>
 
@@ -90,21 +86,15 @@ export default function HomePage({ onNavigate }: HomePageProps) {
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 18, lineHeight: 1.7, color: "rgba(245,243,238,0.65)", marginBottom: 16, maxWidth: 620 }} className="hero-sub">
             {homeContent.hero.subA}
           </p>
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, lineHeight: 1.7, color: "rgba(245,243,238,0.45)", marginBottom: 20, maxWidth: 560 }} className="hero-sub">
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, lineHeight: 1.7, color: "rgba(245,243,238,0.55)", marginBottom: 20, maxWidth: 560 }} className="hero-sub">
             {homeContent.hero.subB}
           </p>
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, lineHeight: 1.6, color: "rgba(245,243,238,0.4)", marginBottom: 40, maxWidth: 560 }} className="hero-sub">
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, lineHeight: 1.6, color: "rgba(245,243,238,0.7)", marginBottom: 40, maxWidth: 560 }} className="hero-sub">
             {homeContent.hero.proofLine}
           </p>
-          <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }} className="hero-cta">
-            <button
-              onClick={scrollToPaths}
-              style={{ background: "#2E9677", border: "none", cursor: "pointer", fontFamily: "'Inter', sans-serif", fontSize: 14, fontWeight: 500, color: "#fff", padding: "16px 32px", letterSpacing: "0.02em", transition: "background 0.25s" }}
-              onMouseEnter={(e) => { e.currentTarget.style.background = "#268A67"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.background = "#2E9677"; }}
-            >
-              {homeContent.hero.ctaPrimary}
-            </button>
+          <div style={{ display: "flex", gap: 20, flexWrap: "wrap", alignItems: "center" }} className="hero-cta">
+            <BookCallButton label={homeContent.hero.ctaPrimary} onNavigate={onNavigate} sourcePage="home" />
+            <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, color: "rgba(245,243,238,0.55)" }}>{homeContent.hero.ctaNote}</span>
           </div>
         </div>
 
@@ -112,6 +102,32 @@ export default function HomePage({ onNavigate }: HomePageProps) {
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 28 }}>
           <div style={{ width: 1, height: 28, background: "linear-gradient(to bottom, #2E9677, transparent)" }} />
           <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "#939598" }}>{homeContent.hero.scrollLabel}</span>
+        </div>
+      </section>
+
+      {/* Results: the numbers already sitting in the case studies, surfaced
+          where a first-time visitor actually sees them. Each links to its study. */}
+      <section {...editableField("home.results")} style={{ padding: "48px 40px 8px" }}>
+        <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, fontWeight: 500, letterSpacing: "0.2em", textTransform: "uppercase", color: "#3AAC88", marginBottom: 20 }}>
+            {homeContent.results.eyebrow}
+          </p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 2 }}>
+            {homeContent.results.items.map((item) => (
+              <a
+                key={item.page}
+                href={pathForPage(item.page as Page)}
+                onClick={(e) => { e.preventDefault(); nav(item.page as Page); }}
+                style={{ display: "block", background: "#1D191A", padding: "32px 36px", borderTop: "1px solid rgba(46,150,119,0.35)", textDecoration: "none", transition: "background 0.25s" }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = "#212B24"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = "#1D191A"; }}
+              >
+                <p style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(34px, 3.5vw, 48px)", lineHeight: 1, color: "#F5F3EE", margin: "0 0 12px" }}>{item.figure}</p>
+                <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, lineHeight: 1.6, color: "rgba(245,243,238,0.7)", margin: "0 0 10px" }}>{item.label}</p>
+                <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, letterSpacing: "0.05em", color: "#3AAC88", margin: 0 }}>{item.client} →</p>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -238,12 +254,14 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                 <img
                   src={src}
                   alt={alt}
+                  loading="lazy"
+                  decoding="async"
                   style={{
                     maxWidth: "100%",
                     maxHeight: 48,
                     objectFit: "contain",
                     filter: "grayscale(100%)",
-                    opacity: 0.6,
+                    opacity: 0.8,
                     transform: "scale(1)",
                     transition: "opacity 0.3s, filter 0.3s, transform 0.3s cubic-bezier(0.34,1.56,0.64,1)",
                   }}
@@ -258,7 +276,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                     const img = e.currentTarget as HTMLImageElement;
                     if (hoverSrc) { img.src = src; }
                     img.style.filter = "grayscale(100%)";
-                    img.style.opacity = "0.6";
+                    img.style.opacity = "0.8";
                     img.style.transform = "scale(1)";
                   }}
                 />
@@ -280,14 +298,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             {homeContent.cta.body}
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <button
-              onClick={() => goToContact(onNavigate, "home")}
-              style={{ background: "#2E9677", border: "none", cursor: "pointer", fontFamily: "'Inter', sans-serif", fontSize: 14, fontWeight: 500, color: "#fff", padding: "16px 32px", transition: "background 0.25s" }}
-              onMouseEnter={(e) => { e.currentTarget.style.background = "#268A67"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.background = "#2E9677"; }}
-            >
-              {homeContent.cta.ctaPrimary}
-            </button>
+            <BookCallButton label={homeContent.cta.ctaPrimary} onNavigate={onNavigate} sourcePage="home" />
             <button
               onClick={() => nav("how-we-work")}
               style={{ background: "none", border: "1px solid rgba(255,255,255,0.15)", cursor: "pointer", fontFamily: "'Inter', sans-serif", fontSize: 14, fontWeight: 400, color: "rgba(245,243,238,0.6)", padding: "16px 32px", transition: "border-color 0.25s" }}

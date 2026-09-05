@@ -12,7 +12,9 @@
         "contact": {
             "email": "jt@theunitedrepublic.com.au",
             "phone": "+61 407 744 388",
-            "phoneHref": "tel:+61407744388"
+            "phoneHref": "tel:+61407744388",
+            "bookingUrl": "",
+            "bookingUrlNote": "Paste a Calendly, Cal.com or Google Calendar appointment link here and every 'Book your free 20 minute call' button opens it. Leave empty to send visitors to the contact form instead."
         },
         "location": "Adelaide, South Australia. Working with businesses and organisations nationally."
     },
@@ -60,11 +62,12 @@
     "home": {
         "hero": {
             "title": "Growth needs sharper choices, not more activity.",
-            "subA": "Most businesses aren't short on effort. They're short on certainty about where the effort should go. We find where growth is really available, decide what matters most, and build the capability to act on it.",
-            "subB": "Big-brand strategic thinking. Backed by real customer evidence. A hard eye on the money. Sized to fit your business.",
+            "subA": "We find where growth is actually available in your business, put a value on it, and build the plan you own. Big-brand thinking, sized to fit.",
+            "subB": "Backed by real customer evidence. A hard eye on the money. Strategy before spend.",
             "ctaPrimary": "Book your free 20 minute call",
             "scrollLabel": "Scroll",
-            "proofLine": "Trusted by Ford, Toyota, Commonwealth Bank, HiPages, The Electoral Commission of SA, NewsCorp and the SA and Federal Government."
+            "proofLine": "25 years. Toyota, Ford, Commonwealth Bank, hipages, the Electoral Commission of SA and the SA and Federal Governments.",
+            "ctaNote": "Pick a time. No pitch, no prep."
         },
         "twoPaths": {
             "title": "Two ways we work. Choose the one that fits.",
@@ -109,9 +112,32 @@
         },
         "cta": {
             "title": "Stop guessing where growth will come from.",
-            "body": "The first conversation is practical and free. What are you trying to achieve? What's slowed down? Where might the opportunity be? And what would a useful outcome look like? Twenty minutes, no pitch.",
+            "body": "Twenty minutes, free, no pitch. Bring what you're trying to achieve and what's slowed down. You'll leave with a view on where the opportunity might be, whether or not we work together.",
             "ctaPrimary": "Book your free 20 minute call",
-            "ctaSecondary": "Find out more"
+            "ctaSecondary": "Or send a note"
+        },
+        "results": {
+            "eyebrow": "What the work has done",
+            "items": [
+                {
+                    "figure": "17% to 22%",
+                    "label": "Toyota market share in twelve months, by moving the argument from price to value.",
+                    "client": "Toyota",
+                    "page": "toyota-lifetime-advantages"
+                },
+                {
+                    "figure": "+30%",
+                    "label": "Online credit card applications after launch, from one idea said in plain language.",
+                    "client": "Commonwealth Bank",
+                    "page": "commbank-little-card-big-rewards"
+                },
+                {
+                    "figure": "+300%",
+                    "label": "First-week postal ballot returns, and the first rise in council election turnout in 25 years.",
+                    "client": "Electoral Commission SA",
+                    "page": "local-government-elections-2022"
+                }
+            ]
         }
     },
     "about": {
@@ -277,17 +303,17 @@
             "growItYourselfLinkLabel": "Join the waitlist",
             "customPackageNote": "Don't need everything in LAUNCH or GROW, or need something extra, like a booking system? Tell us what you need and we'll build a package for you.",
             "customPackageCtaLabel": "Get in touch",
-            "legend": ""
+            "legend": "",
+            "viabilityCtaLabel": "Start with a Viability Session"
         },
         "viabilitySession": {
             "eyebrow": "The Viability Session",
-            "title": "Know it's worth it before you commit.",
+            "title": "Find out if it will pay for itself before you commit.",
             "price": "$450.",
             "priceNote": "Credited in full.",
             "body": [
                 "Every engagement starts with a Viability Session. Two and a half hours with your numbers, your market and your goals, answering one question honestly: will the Growth Program pay for itself in your business?",
-                "If the answer is yes, the $450 comes off your program. If the answer is no, we'll tell you straight, and you'll still walk away knowing more about your business than you did.",
-                "Either way, you get certainty. That's the point."
+                "If the answer is yes, the $450 comes off your program. If the answer is no, we say so, and you still leave knowing more about your business than you did."
             ],
             "steps": [
                 {
@@ -388,7 +414,8 @@
                 "You want a plan you own, not a supplier you can't leave",
                 "Business is good, but the next step isn't obvious",
                 "You're great at the delivery, but finding new customers is the gap"
-            ]
+            ],
+            "eyebrow": "Sound familiar?"
         },
         "products": {
             "launch": {
@@ -682,6 +709,36 @@
                 ],
                 "flexScopeNote": "Don't need everything here, or need something extra, like a booking system? Tell us what you need and we'll build a package for you."
             }
+        },
+        "faq": {
+            "eyebrow": "Questions owners ask",
+            "title": "The practical questions, answered before you have to ask.",
+            "items": [
+                {
+                    "q": "How long does it take?",
+                    "a": "GROW runs as a staged program with 12 weeks of support built in. LAUNCH is shorter and SCALE is scoped to your business. The Viability Session itself is two and a half hours, and you'll have a verdict at the end of it."
+                },
+                {
+                    "q": "Who actually does the work?",
+                    "a": "James leads every engagement. Where the plan needs a specialist, in research, creative, web, media or content, we bring the right one in for that piece of work. There's no permanent team to keep busy, so you only pay for what the plan needs."
+                },
+                {
+                    "q": "How much of my time will it take?",
+                    "a": "Enough to make the decisions, not to do the work. Do It Together means you and your team are in the sessions and build the capability as we go. Done For You means we run it and bring you the decisions."
+                },
+                {
+                    "q": "What if the Viability Session says no?",
+                    "a": "Then we say no, plainly, and you keep the $450 worth of analysis. You'll know more about where your growth is and isn't than you did going in. Nobody is sold a program that won't pay for itself."
+                },
+                {
+                    "q": "What happens after the 12 weeks?",
+                    "a": "You own the plan and the tools, and you know how to use them. Most owners run it themselves from there. If you want us back for a review or the next stage, we're here, but you won't need us to keep the plan working."
+                },
+                {
+                    "q": "Do I need to have my numbers ready?",
+                    "a": "Whatever you have is enough to start. Sales by customer or product, your pricing and your costs are the most useful. If they're messy, that's usually part of what we find and fix."
+                }
+            ]
         }
     },
     "howWeWork": {
@@ -1009,7 +1066,7 @@
             "body": "Twenty minutes, no pitch, or a chat over a coffee. Tell us what you're trying to change, and we'll tell you honestly whether we can help."
         },
         "forms": {
-            "title": "Which are you?",
+            "title": "Tell us what's going on.",
             "growthProgram": {
                 "id": "growth-charter-enquiry",
                 "formName": "growth-charter-enquiry",
@@ -1034,7 +1091,9 @@
                 "intro": "You need the real problem defined before investing in campaigns, content or delivery.",
                 "submitLabel": "Send enquiry"
             },
-            "note": ""
+            "note": "",
+            "intro": "One form is enough. Choose the closest fit and we'll take it from there.",
+            "titleWithBooking": "Or tell us what's going on."
         },
         "waitlist": {
             "id": "charter-course-waitlist",
@@ -1058,6 +1117,12 @@
                 "If it's a fit, we'll set out what an engagement would look like and what it would cost"
             ],
             "footnote": "If it isn't a fit, we'll say so and point you somewhere better suited to your needs."
+        },
+        "booking": {
+            "eyebrow": "Book a call",
+            "title": "Pick a time that suits you.",
+            "body": "Twenty minutes, free, no pitch. If you'd rather write first, the form is below.",
+            "ctaLabel": "Choose a time"
         }
     },
     "growItYourself": {

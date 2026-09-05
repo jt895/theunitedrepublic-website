@@ -1,3 +1,4 @@
+import BookCallButton from "../components/BookCallButton";
 import HoloGlass from "../components/HoloGlass";
 import { howWeWorkContent } from "../data/content";
 import { editableField } from "../data/editable";
@@ -100,14 +101,7 @@ export default function HowWeWorkPage({ onNavigate }: HowWeWorkPageProps) {
             {howWeWorkContent.cta.body}
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <button
-              onClick={() => goToContact(onNavigate, "how-we-work", "strategic-advisory-enquiry")}
-              style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.25)", cursor: "pointer", fontFamily: "'Inter', sans-serif", fontSize: 14, fontWeight: 500, color: "#fff", padding: "16px 36px", transition: "background 0.25s" }}
-              onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.18)"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.1)"; }}
-            >
-              {howWeWorkContent.cta.ctaLabel}
-            </button>
+            <BookCallButton label={howWeWorkContent.cta.ctaLabel} onNavigate={onNavigate} sourcePage="how-we-work" formAnchor="strategic-advisory-enquiry" />
             <button
               onClick={() => nav("services")}
               style={{ background: "none", border: "1px solid rgba(255,255,255,0.25)", cursor: "pointer", fontFamily: "'Inter', sans-serif", fontSize: 14, fontWeight: 400, color: "rgba(255,255,255,0.8)", padding: "16px 36px", transition: "border-color 0.25s" }}

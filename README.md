@@ -6,6 +6,16 @@ React 19 and Vite website deployed to Netlify. The production build pre-renders 
 
 All editable copy lives in `content/site.json`. You can edit that file directly in GitHub or Codespaces, or use Netlify Visual Editor after it has been enabled for the project. React components read the same file, so there is only one copy source.
 
+## Booking, analytics and session recording
+
+Three switches, none of which need a code change:
+
+- **Book a call.** Set `site.contact.bookingUrl` in `content/site.json` to a Calendly, Cal.com or Google Calendar appointment link. Every "Book your free 20 minute call" button then opens it, and the Contact page shows a booking block above the forms. Leave it empty and the buttons fall back to the Contact page form for the page the visitor came from.
+- **Google Analytics 4.** In Netlify, go to **Site configuration → Environment variables** and add `VITE_GA_MEASUREMENT_ID` (looks like `G-XXXXXXXXXX`). Redeploy. Page views, `cta_click` (free call / Viability Session), `contact_click` (phone and email taps) and `generate_lead` (form submissions) are sent automatically. Mark `generate_lead` as a key event in GA4.
+- **Microsoft Clarity.** Add `VITE_CLARITY_ID` the same way for free session recordings and heatmaps.
+
+Both analytics tags stay off in any build where the variable isn't set, local development included.
+
 ## Local development
 
 ```sh

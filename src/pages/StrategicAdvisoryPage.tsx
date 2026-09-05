@@ -1,3 +1,4 @@
+import BookCallButton from "../components/BookCallButton";
 import HoloGlass from "../components/HoloGlass";
 import HeroMark from "../components/HeroMark";
 import RelatedCaseStudies from "../components/RelatedCaseStudies";
@@ -25,7 +26,7 @@ export default function StrategicAdvisoryPage({ onNavigate }: StrategicAdvisoryP
       {/* Hero */}
       <section {...editableField("strategicAdvisory.hero")} style={{ padding: "100px 40px 64px", position: "relative", overflow: "hidden" }}>
         <HoloGlass />
-        <div style={{ position: "absolute", right: "6%", top: "50%", transform: "translateY(-50%)", opacity: 0.14, pointerEvents: "none", zIndex: 0 }} className="hero-ring">
+        <div style={{ position: "absolute", right: "6%", top: "50%", transform: "translateY(-50%)", opacity: 0.14, pointerEvents: "none", zIndex: 0 }} className="hero-decor hero-ring">
           <HeroMark variant="align" size={560} weight={1.4} />
         </div>
         <div style={{ maxWidth: 1280, margin: "0 auto", position: "relative", width: "100%", zIndex: 1 }}>
@@ -46,14 +47,7 @@ export default function StrategicAdvisoryPage({ onNavigate }: StrategicAdvisoryP
               {strategicAdvisoryContent.hero.paraB}
             </p>
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }} className="hero-cta">
-              <button
-                onClick={() => contact("strategic-advisory-enquiry")}
-                style={{ background: "#2E9677", border: "none", cursor: "pointer", fontFamily: "'Inter', sans-serif", fontSize: 14, fontWeight: 500, color: "#fff", padding: "16px 32px", transition: "background 0.25s" }}
-                onMouseEnter={(e) => { e.currentTarget.style.background = "#268A67"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.background = "#2E9677"; }}
-              >
-                {strategicAdvisoryContent.hero.ctaPrimary}
-              </button>
+              <BookCallButton label={strategicAdvisoryContent.hero.ctaPrimary} onNavigate={onNavigate} sourcePage="strategic-advisory" formAnchor="strategic-advisory-enquiry" />
             </div>
           </div>
         </div>
@@ -227,14 +221,7 @@ export default function StrategicAdvisoryPage({ onNavigate }: StrategicAdvisoryP
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, lineHeight: 1.75, color: "rgba(245,243,238,0.5)", marginBottom: 28 }}>
             {strategicAdvisoryContent.cta.body}
           </p>
-          <button
-            onClick={() => contact("strategic-advisory-enquiry")}
-            style={{ background: "#2E9677", border: "none", cursor: "pointer", fontFamily: "'Inter', sans-serif", fontSize: 14, fontWeight: 500, color: "#fff", padding: "16px 32px", transition: "background 0.25s" }}
-            onMouseEnter={(e) => { e.currentTarget.style.background = "#268A67"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.background = "#2E9677"; }}
-          >
-            {strategicAdvisoryContent.cta.ctaLabel}
-          </button>
+          <BookCallButton label={strategicAdvisoryContent.cta.ctaLabel} onNavigate={onNavigate} sourcePage="strategic-advisory" formAnchor="strategic-advisory-enquiry" />
         </div>
       </section>
 

@@ -1,3 +1,4 @@
+import BookCallButton from "../components/BookCallButton";
 import HeroMark from "../components/HeroMark";
 import HoloGlass from "../components/HoloGlass";
 import { aboutContent } from "../data/content";
@@ -22,7 +23,7 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
       {/* Hero */}
       <section {...editableField("about.hero")} style={{ paddingTop: 100, paddingBottom: 64, padding: "100px 40px 64px", position: "relative", overflow: "hidden" }}>
         <HoloGlass />
-        <div style={{ position: "absolute", right: "-4%", top: "50%", transform: "translateY(-50%)", pointerEvents: "none", animation: "fade-in 2.4s ease 0.5s both", zIndex: 1 }}>
+        <div className="hero-decor" style={{ position: "absolute", right: "-4%", top: "50%", transform: "translateY(-50%)", pointerEvents: "none", animation: "fade-in 2.4s ease 0.5s both", zIndex: 1 }}>
           <HeroMark variant="orbit" size={600} opacity={0.2} speed={2.2} />
         </div>
         <div style={{ maxWidth: 1280, margin: "0 auto", position: "relative", zIndex: 2 }}>
@@ -185,14 +186,7 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
             ))}
           </div>
           <div style={{ textAlign: "center" }}>
-            <button
-              onClick={() => goToContact(onNavigate, "about")}
-              style={{ background: "#2E9677", border: "none", cursor: "pointer", fontFamily: "'Inter', sans-serif", fontSize: 14, fontWeight: 500, color: "#fff", padding: "16px 32px", transition: "background 0.25s" }}
-              onMouseEnter={(e) => { e.currentTarget.style.background = "#268A67"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.background = "#2E9677"; }}
-            >
-              {aboutContent.routeOut.buttonLabel}
-            </button>
+            <BookCallButton label={aboutContent.routeOut.buttonLabel} onNavigate={onNavigate} sourcePage="about" />
           </div>
         </div>
       </section>
