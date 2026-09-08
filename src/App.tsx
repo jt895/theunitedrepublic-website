@@ -14,6 +14,7 @@ import ProductPage from "./pages/ProductPage";
 import GrowItYourselfPage from "./pages/GrowItYourselfPage";
 import CaseStudiesIndexPage from "./pages/CaseStudiesIndexPage";
 import CaseStudyDetailPage from "./pages/CaseStudyDetailPage";
+import TermsPage from "./pages/TermsPage";
 import { trackPageview } from "./lib/analytics";
 import { stubRoutes } from "./data/stubRoutes";
 import { growthProgramContent } from "./data/content";
@@ -72,6 +73,7 @@ export default function App({ initialPage = "home" }: AppProps) {
       case "scale": return <ProductPage onNavigate={navigate} page="scale" contentKey="scale" product={growthProgramContent.products.scale} />;
       case "grow-it-yourself": return <GrowItYourselfPage onNavigate={navigate} />;
       case "case-studies": return <CaseStudiesIndexPage onNavigate={navigate} />;
+      case "terms": return <TermsPage onNavigate={navigate} />;
       case "toyota-lifetime-advantages":
       case "ford-six-model-launches":
       case "commbank-little-card-big-rewards":

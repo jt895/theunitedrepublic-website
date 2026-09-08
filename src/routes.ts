@@ -19,7 +19,8 @@ export type Page =
   | "state-election-2022"
   | "local-government-elections-2022"
   | "first-nations-voice-2024"
-  | "adelaide-hills-wine-region";
+  | "adelaide-hills-wine-region"
+  | "terms";
 
 export interface SiteRoute {
   page: Page;
@@ -176,6 +177,14 @@ export const siteRoutes: SiteRoute[] = [
     path: "/case-studies/adelaide-hills-wine-region/",
     title: "Adelaide Hills Wine Region | Case Studies | The United Republic",
     description: "Brand and growth work for the Adelaide Hills Wine Region.",
+  },
+
+  {
+    page: "terms",
+    path: "/terms/",
+    title: "Terms and Conditions | The United Republic",
+    description:
+      "The United Republic's standard terms and conditions for web development and consulting services, covering quotes, fees, payment, intellectual property, warranty and liability.",
   },
 ];
 

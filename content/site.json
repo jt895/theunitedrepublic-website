@@ -55,7 +55,8 @@
                 "label": "Strategic Advisory enquiry",
                 "anchor": "strategic-advisory-enquiry"
             }
-        ]
+        ],
+        "legalLabel": "Terms and Conditions"
     },
     "home": {
         "hero": {
@@ -1933,5 +1934,149 @@
                 }
             }
         }
+    },
+    "terms": {
+        "eyebrow": "Legal",
+        "heading": "Terms and Conditions",
+        "subheading": "The United Republic Pty Ltd — Web Development and Consulting Services",
+        "meta": "ABN 19 658 375 627 · Version 1.0, 8 September 2026",
+        "downloadLabel": "Download a PDF copy",
+        "downloadHref": "/downloads/the-united-republic-terms-and-conditions.pdf",
+        "sections": [
+            {
+                "heading": "1. These terms",
+                "body": [
+                    "These terms apply to all work performed by The United Republic Pty Ltd ABN 19 658 375 627, trading as The United Republic (“we”, “us”) for the client named on the invoice or proposal (“you”). Accepting a quote or proposal, issuing a purchase order, paying a deposit, or instructing us to begin work constitutes acceptance of these terms. Where a signed proposal or scope of work conflicts with these terms, the signed document prevails."
+                ],
+                "bullets": [],
+                "footnote": ""
+            },
+            {
+                "heading": "2. Quotes, proposals and scope",
+                "body": [
+                    "Quotes are valid for 30 days from the date of issue and are based on the scope described at the time. Work outside that scope is a variation and will be quoted separately or charged at our current hourly rate. Estimates of hours are made in good faith and are not fixed prices unless the proposal says so."
+                ],
+                "bullets": [],
+                "footnote": ""
+            },
+            {
+                "heading": "3. Fees and payment",
+                "body": [],
+                "bullets": [
+                    "Invoices are payable within 7 days of the invoice date unless otherwise agreed in writing.",
+                    "A deposit of 50% of the quoted fee is payable before work commences on fixed-price projects. Ongoing or retained work is invoiced monthly in advance.",
+                    "Payment is to be made by electronic funds transfer to the account shown on the invoice. Card and payment gateway surcharges, where applicable, are passed on at cost.",
+                    "All amounts are in Australian dollars and, unless stated otherwise, are exclusive of GST. GST is shown separately on the invoice.",
+                    "Invoices are payable in full. Disputed items must be raised in writing within 3 days of the invoice date; undisputed amounts remain payable by the due date."
+                ],
+                "footnote": ""
+            },
+            {
+                "heading": "4. Late payment",
+                "body": [
+                    "If an invoice is not paid by the due date, overdue accounts incur interest at 2% per month on the outstanding balance, calculated daily from the day after the due date until the account is paid in full, plus a one-off administration fee of 10% of the overdue amount to cover the cost of following up on the account.",
+                    "We may also, without limiting any other right:"
+                ],
+                "bullets": [
+                    "suspend all work and withhold deliverables, access, files and login credentials until the account is brought up to date;",
+                    "suspend or withdraw hosting, domain, maintenance or support services we manage on your behalf;",
+                    "recover all reasonable costs of collection, including debt recovery agency fees, legal costs and disbursements."
+                ],
+                "footnote": "Work suspended for non-payment may be rescheduled subject to our availability, and timelines will be adjusted accordingly."
+            },
+            {
+                "heading": "5. Your responsibilities",
+                "body": [
+                    "You agree to provide content, images, approvals, feedback, access credentials and any other materials we reasonably require, in a timely manner. You warrant that any material you supply is accurate and that you hold the rights to use it. If a project is delayed by more than 30 days awaiting materials or approvals from you, we may invoice for work completed to that date and reschedule the balance."
+                ],
+                "bullets": [],
+                "footnote": ""
+            },
+            {
+                "heading": "6. Variations and delays",
+                "body": [
+                    "Changes to agreed scope, direction or deliverables after work has commenced will be quoted as a variation and may affect the timeline and fee. Timelines are estimates and assume timely responses from you and from any third parties involved."
+                ],
+                "bullets": [],
+                "footnote": ""
+            },
+            {
+                "heading": "7. Third-party costs and services",
+                "body": [
+                    "Domain registrations, hosting, software licences, plugins, themes, stock imagery, fonts, email services and similar third-party costs are additional to our fees and are either billed to you at cost or purchased in your own name. We are not responsible for the performance, availability, pricing or terms of third-party products and services."
+                ],
+                "bullets": [],
+                "footnote": ""
+            },
+            {
+                "heading": "8. Intellectual property",
+                "body": [],
+                "bullets": [
+                    "Ownership of the final deliverables produced specifically for you transfers to you on receipt of payment in full. Until then, all rights remain with us.",
+                    "We retain ownership of our pre-existing materials, tools, code libraries, frameworks, templates, methodologies and know-how, and of any concepts, drafts or options not selected by you. Where these are embedded in a deliverable, you receive a perpetual, non-exclusive licence to use them as part of that deliverable.",
+                    "Third-party components remain subject to their own licences.",
+                    "Unless you tell us otherwise in writing, we may reference the work and display it in our portfolio, case studies and marketing."
+                ],
+                "footnote": ""
+            },
+            {
+                "heading": "9. Testing, warranty and support",
+                "body": [
+                    "Websites are tested on current versions of major browsers on desktop and mobile. We will correct defects in our own work reported in writing within 30 days of launch or delivery at no charge. That warranty does not cover changes made by you or a third party, faults in third-party software or hosting, changes to browsers, plugins or platforms, content updates, or new functionality. Ongoing maintenance, updates, backups, security monitoring and support are not included unless covered by a separate agreement."
+                ],
+                "bullets": [],
+                "footnote": ""
+            },
+            {
+                "heading": "10. Confidentiality",
+                "body": [
+                    "Each party will keep the other's confidential information confidential and use it only for the purposes of the engagement. This does not apply to information that is public, independently known, or required to be disclosed by law."
+                ],
+                "bullets": [],
+                "footnote": ""
+            },
+            {
+                "heading": "11. Liability",
+                "body": [
+                    "Nothing in these terms excludes rights you have under the Australian Consumer Law. To the extent permitted by law, our total liability arising out of or in connection with the services is limited to the fees paid by you for the services giving rise to the claim, and we are not liable for indirect or consequential loss, loss of profit, loss of revenue, loss of data, or business interruption. You are responsible for maintaining your own backups of your data and website."
+                ],
+                "bullets": [],
+                "footnote": ""
+            },
+            {
+                "heading": "12. Cancellation and termination",
+                "body": [
+                    "Either party may terminate an engagement on 14 days' written notice. On termination, you must pay for all work completed and all third-party costs committed up to the date of termination. Deposits are non-refundable. We may terminate immediately if an account remains unpaid 30 days past its due date."
+                ],
+                "bullets": [],
+                "footnote": ""
+            },
+            {
+                "heading": "13. Force majeure",
+                "body": [
+                    "Neither party is liable for delay or failure to perform caused by events beyond its reasonable control, including natural disasters, outages, third-party platform failures, illness, or government action."
+                ],
+                "bullets": [],
+                "footnote": ""
+            },
+            {
+                "heading": "14. Privacy",
+                "body": [
+                    "We handle personal information in accordance with the Privacy Act 1988 (Cth) and use it only for the purposes of delivering the services and administering our relationship with you."
+                ],
+                "bullets": [],
+                "footnote": ""
+            },
+            {
+                "heading": "15. General",
+                "body": [
+                    "These terms are governed by the laws of South Australia, and the parties submit to the non-exclusive jurisdiction of the courts of that state. If any provision is found to be unenforceable, the remaining provisions continue in force. No variation to these terms is effective unless agreed in writing."
+                ],
+                "bullets": [],
+                "footnote": ""
+            }
+        ],
+        "contactLine": "Questions about these terms? Email jt@theunitedrepublic.com.au.",
+        "registeredLine": "The United Republic Pty Ltd · PO Box 1442, Nairne SA 5252 · theunitedrepublic.com.au"
     }
 }

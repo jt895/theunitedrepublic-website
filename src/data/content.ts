@@ -19,3 +19,4 @@ export const strategicAdvisoryContent = contentDocument.strategicAdvisory;
 export const contactContent = contentDocument.contact;
 export const growItYourselfContent = contentDocument.growItYourself;
 export const caseStudiesContent = contentDocument.caseStudies;
+export const termsContent = contentDocument.terms;

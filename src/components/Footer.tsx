@@ -89,9 +89,20 @@ export default function Footer({ current, onNavigate }: FooterProps) {
         </div>
 
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: 32, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16 }}>
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: "#939598", margin: 0 }}>
-            {siteContent.copyright}
-          </p>
+          <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: 20 }}>
+            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: "#939598", margin: 0 }}>
+              {siteContent.copyright}
+            </p>
+            <a
+              href={pathForPage("terms")}
+              onClick={(event) => { event.preventDefault(); nav("terms"); }}
+              style={{ cursor: "pointer", fontFamily: "'Inter', sans-serif", fontSize: 12, color: "#939598", textDecoration: "none", transition: "color 0.2s" }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = "#2E9677"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = "#939598"; }}
+            >
+              {footerContent.legalLabel}
+            </a>
+          </div>
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: "#939598", margin: 0, fontStyle: "italic" }}>
             {siteContent.tagline}
           </p>
