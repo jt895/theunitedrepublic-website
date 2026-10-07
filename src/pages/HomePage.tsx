@@ -5,59 +5,11 @@ import type { Page } from "../routes";
 import HoloGlass from "../components/HoloGlass";
 import HeroMark from "../components/HeroMark";
 
-import imgToyota from "@/imports/toyota.png";
-import imgFord from "@/imports/ford.png";
-import imgHyundai from "@/imports/hyundai.png";
-import imgCommbank from "@/imports/client-logos/commbank.png";
-import imgMillers from "@/imports/client-logos/millers.png";
-import imgHipages from "@/imports/client-logos/hipages.png";
-import imgAdelaideHills from "@/imports/client-logos/adelaide-hills.png";
-import imgEcsa from "@/imports/client-logos/ecsa-campaign.png";
-import imgAqis from "@/imports/client-logos/aqis.png";
-import imgAmbc from "@/imports/ambc.png";
-import imgSaGovernment from "@/imports/client-logos/sa-government.png";
-import imgTafeVictoria from "@/imports/tafe-victoria.png";
-import imgDfat from "@/imports/client-logos/dfat.png";
 import { useReveal } from "../hooks/useReveal";
-import imgKettle from "@/imports/client-logos/kettle.svg";
-import imgCommbankWhite from "@/imports/client-logos/commbank-white.png";
-import imgHipagesWhite from "@/imports/client-logos/hipages-white.png";
 
 interface HomePageProps {
   onNavigate: (page: Page) => void;
 }
-
-// Case-study client roster, curated per JT (Aug 2026). Backgrounds cleaned to
-// true transparent PNGs where the source had a white/opaque backing. CommBank
-// and hipages sourced from seeklogo (higher-res, already transparent) rather
-// than the older low-res site assets. DFAT's blue badge shape is part of the
-// Smartraveller brand mark, so it's kept intact rather than stripped. ECSA
-// uses the "Your vote. Your voice." campaign lockup (white keyline, includes
-// the Electoral Commission SA name) per JT, replacing the plain crest.
-// CommBank and hipages swap to a dedicated white version on hover instead of
-// the grid's usual colour swap: their colour art has near-black elements
-// (CommBank's wordmark/corner, hipages' "pages" text) that disappear against
-// the black background at full colour. The white versions are generated from
-// the same source art, with hipages' "hi" lettering knocked out to
-// transparent (it's solid white-on-orange in the original, not a cutout, so
-// a naive recolour would merge it into the house shape). Both use a larger
-// 1.5x hover scale instead of the grid's default 1.4x, per JT.
-const clientLogoImages: { src: string; alt: string; hoverSrc?: string; hoverScale?: number }[] = [
-  { src: imgToyota,        alt: "Toyota" },
-  { src: imgFord,          alt: "Ford" },
-  { src: imgHyundai,       alt: "Hyundai" },
-  { src: imgCommbank,      alt: "Commonwealth Bank", hoverSrc: imgCommbankWhite, hoverScale: 1.5 },
-  { src: imgMillers,       alt: "Millers" },
-  { src: imgHipages,       alt: "hipages", hoverSrc: imgHipagesWhite, hoverScale: 1.5 },
-  { src: imgAdelaideHills, alt: "Adelaide Hills Wine Region" },
-  { src: imgEcsa,          alt: "Electoral Commission SA" },
-  { src: imgDfat,          alt: "DFAT Smartraveller" },
-  { src: imgAqis,          alt: "AQIS" },
-  { src: imgAmbc,          alt: "Australia Malaysia Business Council" },
-  { src: imgSaGovernment,  alt: "SA Government" },
-  { src: imgTafeVictoria,  alt: "TAFE Victoria" },
-  { src: imgKettle,        alt: "Kettle Chips" },
-];
 
 export default function HomePage({ onNavigate }: HomePageProps) {
   const nav = (page: Page) => { onNavigate(page); window.scrollTo({ top: 0 }); };
@@ -211,60 +163,38 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             </p>
           </div>
 
-          {/* Client logo grid: transparent tiles, true grayscale-to-colour hover */}
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(130px, 1fr))",
-            gap: 8,
-            overflow: "visible",
-          }}>
-            {clientLogoImages.map(({ src, alt, hoverSrc, hoverScale }) => (
-              <div
-                key={alt}
+          {/* Client names as text (bold, white). Names live in content/site.json
+              under home.credibility.clients so they stay editable. */}
+          <ul
+            {...editableField("home.credibility.clients")}
+            style={{
+              listStyle: "none",
+              margin: "0 auto",
+              padding: 0,
+              maxWidth: 1040,
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "center",
+              columnGap: 44,
+              rowGap: 20,
+            }}
+          >
+            {homeContent.credibility.clients.map((name) => (
+              <li
+                key={name}
                 style={{
-                  background: "transparent",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  padding: "20px 16px",
-                  height: 96,
-                  position: "relative",
-                  zIndex: 0,
-                  transition: "z-index 0s 0.25s",
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: "clamp(16px, 1.5vw, 20px)",
+                  fontWeight: 700,
+                  lineHeight: 1.3,
+                  color: "#FFFFFF",
+                  textAlign: "center",
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.zIndex = "10"; e.currentTarget.style.transition = "z-index 0s"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.zIndex = "0"; e.currentTarget.style.transition = "z-index 0s 0.25s"; }}
               >
-                <img
-                  src={src}
-                  alt={alt}
-                  style={{
-                    maxWidth: "100%",
-                    maxHeight: 48,
-                    objectFit: "contain",
-                    filter: "grayscale(100%)",
-                    opacity: 0.6,
-                    transform: "scale(1)",
-                    transition: "opacity 0.3s, filter 0.3s, transform 0.3s cubic-bezier(0.34,1.56,0.64,1)",
-                  }}
-                  onMouseEnter={(e) => {
-                    const img = e.currentTarget as HTMLImageElement;
-                    if (hoverSrc) { img.src = hoverSrc; }
-                    img.style.filter = "grayscale(0%)";
-                    img.style.opacity = "1";
-                    img.style.transform = `scale(${hoverScale ?? 1.4})`;
-                  }}
-                  onMouseLeave={(e) => {
-                    const img = e.currentTarget as HTMLImageElement;
-                    if (hoverSrc) { img.src = src; }
-                    img.style.filter = "grayscale(100%)";
-                    img.style.opacity = "0.6";
-                    img.style.transform = "scale(1)";
-                  }}
-                />
-              </div>
+                {name}
+              </li>
             ))}
-          </div>
+          </ul>
 
         </div>
       </section>

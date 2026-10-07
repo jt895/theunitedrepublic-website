@@ -106,7 +106,23 @@
         "credibility": {
             "eyebrow": "Credibility",
             "title": "25 years. Some of Australia's biggest brands.",
-            "body": "Brands and organisations we've led strategy, marketing and communications work for across 25 years."
+            "body": "Brands and organisations we've led strategy, marketing and communications work for across 25 years.",
+            "clients": [
+                "Toyota",
+                "Ford",
+                "Hyundai",
+                "Commonwealth Bank",
+                "Millers",
+                "HiPages",
+                "Adelaide Hills Wine Region",
+                "Electoral Commission SA",
+                "DFAT Smartraveller",
+                "AQIS",
+                "Australia Malaysia Business Council",
+                "SA Government",
+                "TAFE Victoria",
+                "Kettle Chips"
+            ]
         },
         "cta": {
             "title": "Stop guessing where growth will come from.",
