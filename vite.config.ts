@@ -136,7 +136,9 @@ function figmaSiteConfiguration(config: FigmaSiteConfiguration): Plugin {
         if (favicon) {
           tags.push({ tag: 'link', attrs: { rel: 'icon', href: favicon }, injectTo: 'head' })
         }
-        if (title) {
+        // index.html already carries an og:title that prerender.mjs rewrites per
+        // route. Injecting a second one here left every page sharing this default.
+        if (title && !/<meta\s+property="og:title"/.test(result)) {
           tags.push({ tag: 'meta', attrs: { property: 'og:title', content: title }, injectTo: 'head' })
         }
         if (description) {

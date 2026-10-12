@@ -37,16 +37,16 @@ export const siteRoutes: SiteRoute[] = [
   {
     page: "home",
     path: "/",
-    title: "The United Republic | Strategy and Business Growth in Adelaide, South Australia",
+    title: "The United Republic | Strategy and Business Growth in Adelaide, Canberra, Sydney and Melbourne",
     description:
-      "Strategy and growth for Australian businesses and complex organisations. We find where growth is really available, set the priorities and build the capability to act. Based in South Australia.",
+      "Strategy and growth for Australian businesses and complex organisations. We find where growth is really available, set the priorities and build the capability to act. Working in Adelaide, Canberra, Sydney and Melbourne.",
   },
   {
     page: "about",
     path: "/about/",
     title: "About | The United Republic",
     description:
-      "The United Republic is an independent Australian strategy and growth advisory led by James Trebilcock, with 25 years across government, major brands and owner-led business. Based in South Australia.",
+      "The United Republic is an independent Australian strategy and growth advisory led by James Trebilcock, with 25 years across government, major brands and owner-led business. Working in Adelaide, Canberra, Sydney and Melbourne.",
   },
   {
     page: "how-we-work",
