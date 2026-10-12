@@ -399,7 +399,7 @@ export default function GrowthProgramPage({ onNavigate }: GrowthProgramPageProps
       {/* Related case studies */}
       <RelatedCaseStudies
         eyebrow="Related work"
-        title="Businesses and organisations who've used it"
+        title="The same thinking, applied"
         slugs={["adelaide-hills-wine-region", "snack-brands-kettle-popcorn", "local-government-elections-2022"]}
         onNavigate={onNavigate}
         background="#1D191A"
