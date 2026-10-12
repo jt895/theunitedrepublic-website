@@ -53,7 +53,7 @@ export const siteRoutes: SiteRoute[] = [
     path: "/advisory-process/",
     title: "The Advisory Process | The United Republic",
     description:
-      "How The United Republic works: diagnose, design, direct and measure. Problem definition through to briefing and guiding the specialists who deliver the work.",
+      "How The United Republic works: understand, strategise, assemble and direct, then measure. Problem definition through to briefing and guiding the specialists who deliver the work.",
   },
   {
     page: "services",
@@ -170,7 +170,7 @@ export const siteRoutes: SiteRoute[] = [
     page: "first-nations-voice-2024",
     path: "/case-studies/first-nations-voice-2024/",
     title: "2024 First Nations Voice | Case Studies | The United Republic",
-    description: "Strategy and communications for the 2024 First Nations Voice referendum.",
+    description: "Strategy and communications for South Australia's 2024 First Nations Voice to Parliament election.",
   },
   {
     page: "adelaide-hills-wine-region",

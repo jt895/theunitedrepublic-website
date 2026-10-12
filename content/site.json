@@ -65,7 +65,7 @@
             "subB": "Big-brand strategic thinking. Backed by real customer evidence. A hard eye on the money. Sized to fit your business.",
             "ctaPrimary": "Book your free 20 minute call",
             "scrollLabel": "Scroll",
-            "proofLine": "Trusted by Ford, Toyota, Commonwealth Bank, HiPages, The Electoral Commission of SA, NewsCorp and the SA and Federal Government."
+            "proofLine": "Trusted by Ford, Toyota, Commonwealth Bank, hipages, The Electoral Commission of SA, News Corp and the SA and Federal Government."
         },
         "twoPaths": {
             "title": "Two ways we work. Choose the one that fits.",
@@ -162,7 +162,7 @@
         "experience": {
             "eyebrow": "Track record",
             "title": "Where the thinking has been tested",
-            "paraA": "Government and public sector: state and local government election programmes, DFAT Smartraveller, AQIS Quarantine Matters, the Motor Accident Commission, the Electoral Commission of South Australia.",
+            "paraA": "Government and public sector: state and local government election programs, DFAT Smartraveller, AQIS Quarantine Matters, the Motor Accident Commission, the Electoral Commission of South Australia.",
             "paraB": "Major brands: Toyota, Ford, Hyundai, Subaru, Commonwealth Bank, Australia Post, Stockland, Panasonic.",
             "paraC": "South Australian business: Yalumba, Accolade Wines, Petaluma, St Hallett, Credit Union SA, Adelaide Hills Wine Region, The Bend Motorsport Park.",
             "paraD": "And owner-led businesses, from a startup in a garage to multi-million dollar enterprises."
@@ -247,7 +247,7 @@
                     "note": "For established businesses ready for the next step. Everything you need to grow, built on your actual sales data, with pricing, conversion and 12 weeks of support. Do it together to build the capability in-house, or done for you so you can stay focused on running the business.",
                     "cells": [
                         {
-                            "value": "$9,550",
+                            "value": "From $9,550",
                             "page": "do-it-together",
                             "pending": false
                         },
@@ -446,7 +446,7 @@
                 "viabilitySession": {
                     "heading": "We check the numbers before we take your money.",
                     "body": [
-                        "Every engagement starts with a 90-minute Viability Session ($450), credited in full against the package if you proceed.",
+                        "Every engagement starts with a two and a half hour Viability Session ($450), credited in full against the package if you proceed.",
                         "We work out your breakeven, how many customers you need to hit your income goal, and whether your capacity can actually deliver them. You leave with a one-page summary of your own numbers, whether or not you go further.",
                         "If the numbers don't work, we'll tell you."
                     ]
@@ -798,7 +798,7 @@
                     "body": "Evaluate what worked and improve what's next"
                 }
             ],
-            "noteA": "Start anywhere. Most clients begin with a Diagnostic. Some arrive with the problem already clear and start at the Strategy Build, or they need a Strategic Lead - a senior project implementation specialist and creative director to bring their established strategy to life. ",
+            "noteA": "Start anywhere. Project work usually begins with a Diagnostic. Some clients arrive with the problem already clear and start at the Strategy Build, or they need a Strategic Lead - a senior project implementation specialist and creative director to bring their established strategy to life. Others want ongoing senior leadership from day one and start with a Fractional CMO. ",
             "noteB": ""
         },
         "services": [
@@ -825,7 +825,7 @@
                 "title": "Strategic Diagnostic",
                 "sub": "Define the objectives and understand the real problems before you invest",
                 "duration": "2–4 weeks",
-                "body": "A focused diagnostic to understand the challenge, map the landscape, and define where strategic focus will have the greatest impact. Can be run as a facilitated workshop programme where the priority is aligning a team quickly, or as a research-led diagnostic where the priority is establishing the truth.",
+                "body": "A focused diagnostic to understand the challenge, map the landscape, and define where strategic focus will have the greatest impact. Can be run as a facilitated workshop program where the priority is aligning a team quickly, or as a research-led diagnostic where the priority is establishing the truth.",
                 "included": [
                     "Audience and stakeholder insight analysis",
                     "Problem definition and strategic framing",
@@ -870,7 +870,7 @@
                     "Stakeholder alignment and management",
                     "Performance tracking and refinement"
                 ],
-                "when": "For high-stakes, complex or long-term programmes that need senior strategic and implementation leadership from start to finish.",
+                "when": "For high-stakes, complex or long-term programs that need senior strategic and implementation leadership from start to finish.",
                 "execution": ""
             },
             {
@@ -886,7 +886,7 @@
                     "Strategic debrief and learnings",
                     "Refinement recommendations"
                 ],
-                "when": "After a campaign or programme, to evaluate performance and feed insight back into future strategy.",
+                "when": "After a campaign or program, to evaluate performance and feed insight back into future strategy.",
                 "execution": ""
             }
         ],
@@ -1706,7 +1706,7 @@
                 },
                 "result": {
                     "heading": "The result",
-                    "headline": "Participation lifted from 30% to over 34%, a gain of more than 13% increase against a long-term decline, the first time participation had increased in over 25 years.",
+                    "headline": "Participation lifted from 30% to over 34%, a gain of more than 13% against a long-term decline, the first time participation had increased in over 25 years.",
                     "body": "First-week postal ballot returns rose by 300%, improving processing efficiency and delivering results faster."
                 },
                 "gallery": {
@@ -1846,7 +1846,7 @@
                     "items": [
                         "Identified early that conventional advertising alone would not work, and built a community-led approach instead",
                         "Combined communications strategy, community engagement, media engagement, advertising, PR and budget management",
-                        "Delivered across statewide direct community engagement with the community, supported by TV, press, outdoor, digital, website, social and PR",
+                        "Delivered through direct community engagement statewide, supported by TV, press, outdoor, digital, website, social and PR",
                         "Created more than 500 community engagement kits and supported over 400 engagement sessions"
                     ]
                 },
@@ -1939,7 +1939,7 @@
         "eyebrow": "Legal",
         "heading": "Terms and Conditions",
         "subheading": "The United Republic Pty Ltd — Web Development and Consulting Services",
-        "meta": "ABN 19 658 375 627 · Version 1.0, 8 September 2026",
+        "meta": "ABN 19 658 375 627 · Version 1.1, 12 October 2026",
         "downloadLabel": "Download a PDF copy",
         "downloadHref": "/downloads/the-united-republic-terms-and-conditions.pdf",
         "sections": [
@@ -1964,7 +1964,7 @@
                 "body": [],
                 "bullets": [
                     "Invoices are payable within 7 days of the invoice date unless otherwise agreed in writing.",
-                    "A deposit of 50% of the quoted fee is payable before work commences on fixed-price projects. Ongoing or retained work is invoiced monthly in advance.",
+                    "A deposit of 50% of the quoted fee is payable before work commences on fixed-price projects, unless the proposal, quote or published package sets out a different payment schedule. Ongoing or retained work is invoiced monthly in advance.",
                     "Payment is to be made by electronic funds transfer to the account shown on the invoice. Card and payment gateway surcharges, where applicable, are passed on at cost.",
                     "All amounts are in Australian dollars and, unless stated otherwise, are exclusive of GST. GST is shown separately on the invoice.",
                     "Invoices are payable in full. Disputed items must be raised in writing within 3 days of the invoice date; undisputed amounts remain payable by the due date."
